@@ -38,10 +38,10 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 | Name | Description |
 |------|-------------|
 | app_name | Final name of the app, optionally includes prefix and suffix |
-| cwagent_task_role | Task role ARN |
 | ecs_service_arn | Service ARN |
 | ecs_task_definition_arn | Task definition ARN |
 | iam_cwagent_task_execution_role | Task execution role ARN |
+| iam_cwagent_task_role | Task role ARN |
 
 <!-- terraform_docs_end -->
 

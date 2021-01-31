@@ -18,7 +18,7 @@ output "iam_cwagent_task_execution_role" {
   description = "Task execution role ARN"
 }
 
-output "cwagent_task_role" {
+output "iam_cwagent_task_role" {
   value       = aws_iam_role.cwagent_task_role.arn
   description = "Task role ARN"
 }

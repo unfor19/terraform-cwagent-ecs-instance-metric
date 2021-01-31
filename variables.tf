@@ -38,14 +38,14 @@ variable "execution_role_arn" {
 
 variable "task_cpu" {
   type        = number
-  description = "CloudWatch Agent task CPU"
+  description = "CloudWatch Agent task milli-CPU"
   default     = 128
 }
 
 
 variable "task_memory" {
   type        = number
-  description = "CloudWatch Agent task Memory"
+  description = "CloudWatch Agent task Memory (MB)"
   default     = 64
 }
 

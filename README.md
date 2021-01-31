@@ -30,8 +30,8 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 | prefix | Prefix all resources with this string, example: myapp | `string` | `""` | no |
 | region | Insert the region to deploy in, defaults to current region | `string` | n/a | yes |
 | suffix | Suffix all resources with this string, example: dev | `string` | `""` | no |
-| task_cpu | CloudWatch Agent task CPU | `number` | `128` | no |
-| task_memory | CloudWatch Agent task Memory | `number` | `64` | no |
+| task_cpu | CloudWatch Agent task milli-CPU | `number` | `128` | no |
+| task_memory | CloudWatch Agent task Memory (MB) | `number` | `64` | no |
 | task_role_arn | Enter the role arn you want to use as the ecs task role | `string` | `""` | no |
 
 ## Outputs

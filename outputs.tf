@@ -10,15 +10,15 @@ output "ecs_service_arn" {
 
 output "ecs_task_definition_arn" {
   value       = aws_ecs_task_definition.cwagent.ARN
-  description = "Task definition ARN"
+  description = "Task Definition ARN"
 }
 
 output "iam_cwagent_task_execution_role" {
   value       = aws_iam_role.cwagent_task_execution_role.arn
-  description = "Task execution role ARN"
+  description = "Task Execution Role ARN"
 }
 
 output "iam_cwagent_task_role" {
   value       = aws_iam_role.cwagent_task_role.arn
-  description = "Task role ARN"
+  description = "Task Role ARN"
 }

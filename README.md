@@ -24,15 +24,15 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| cluster_name | Enter the name of your ECS cluster from which you want to collect metrics | `string` | n/a | yes |
-| execution_role_arn | Enter the role arn you want to use as the ecs execution role | `string` | `""` | no |
-| image_tag | CloudWatch Agent image tag for amazon/cloudwatch-agent:{image_tag} | `string` | `"1.247347.3b250378"` | no |
+| cluster_name | Target ECS Cluster from which you want to collect metrics | `string` | n/a | yes |
+| execution_role_arn | Target ECS Execution Role, if empty then the role is created as part of this module | `string` | `""` | no |
+| image_tag | CloudWatch Agent Image Tag for amazon/cloudwatch-agent:{image_tag} | `string` | `"1.247347.3b250378"` | no |
 | prefix | Prefix all resources with this string, example: myapp | `string` | `""` | no |
-| region | Insert the region to deploy in, defaults to current region | `string` | n/a | yes |
+| region | Target region | `string` | n/a | yes |
 | suffix | Suffix all resources with this string, example: dev | `string` | `""` | no |
-| task_cpu | CloudWatch Agent task milli-CPU | `number` | `128` | no |
-| task_memory | CloudWatch Agent task Memory (MB) | `number` | `64` | no |
-| task_role_arn | Enter the role arn you want to use as the ecs task role | `string` | `""` | no |
+| task_cpu | CloudWatch Agent Task milli-CPU | `number` | `128` | no |
+| task_memory | CloudWatch Agent Task Memory (MB) | `number` | `64` | no |
+| task_role_arn | Target ECS Task Role, if empty then the role is created as part of this module | `string` | `""` | no |
 
 ## Outputs
 
@@ -40,9 +40,9 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 |------|-------------|
 | app_name | Final name of the app, optionally includes prefix and suffix |
 | ecs_service_arn | Service ARN |
-| ecs_task_definition_arn | Task definition ARN |
-| iam_cwagent_task_execution_role | Task execution role ARN |
-| iam_cwagent_task_role | Task role ARN |
+| ecs_task_definition_arn | Task Definition ARN |
+| iam_cwagent_task_execution_role | Task Execution Role ARN |
+| iam_cwagent_task_role | Task Role ARN |
 
 <!-- terraform_docs_end -->
 

@@ -48,8 +48,9 @@ variable "task_memory" {
 }
 
 variable "image_tag" {
-  type    = string
-  default = "1.247347.3b250378"
+  type        = string
+  description = "CloudWatch Agent image tag for amazon/cloudwatch-agent:{image_tag}"
+  default     = "1.247347.3b250378"
 }
 
 

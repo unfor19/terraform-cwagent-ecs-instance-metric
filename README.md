@@ -4,6 +4,19 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 
 **IMPORTANT**: Works only on Linux EC2 instances. If you have 2 Linux + 1 Windows, then the ECS Service desired count will be 3, but the running tasks will be 2, which is normal.
 
+## Usage
+
+```ruby
+module "cwagent" {
+  source       = "git::https://github.com/unfor19/cwagent-ecs-instance-metric-terraform.git"
+  region       = "eu-west-1"
+  cluster_name = "my-ecs-cluster-name"
+
+  prefix       = "my-app" # optional
+  suffix       = "dev"    # optional
+}
+```
+
 <!-- terraform_docs_start -->
 
 ## Requirements

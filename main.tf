@@ -43,8 +43,7 @@ resource "aws_ecs_service" "cwagent" {
   task_definition     = aws_ecs_task_definition.cwagent.arn
   scheduling_strategy = "DAEMON"
 
-  # placement_constraints {
-  #   type       = "memberOf"
-  #   expression = "attribute:ecs.os-type=='linux'"
-  # }
+  placement_constraints {
+    type = "distinctInstance"
+  }
 }

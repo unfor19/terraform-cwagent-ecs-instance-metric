@@ -40,7 +40,8 @@ In a future release, it will be possible to set a [custom configuration for the 
 
 ```ruby
 module "cwagent" {
-  source       = "git::https://github.com/unfor19/cwagent-ecs-instance-metric-terraform.git"
+  source       = "unfor19/ecs-instance-metric/cwagent"
+  version      = "0.0.1"
   region       = "eu-west-1"
   cluster_name = "my-ecs-cluster-name"
 

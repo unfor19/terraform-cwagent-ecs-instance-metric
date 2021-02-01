@@ -6,6 +6,8 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 
 ## Usage
 
+- In a future release, it will be possible to set a [custom configuration for the CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html#:~:text=Advanced%20Configuration) with [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).
+
 ```ruby
 module "cwagent" {
   source       = "git::https://github.com/unfor19/cwagent-ecs-instance-metric-terraform.git"

@@ -93,8 +93,8 @@ module "cwagent" {
 | app_name | App name, optionally includes prefix and suffix |
 | ecs_service_arn | Service ARN |
 | ecs_task_definition_arn | Task Definition ARN |
-| iam_cwagent_task_execution_role | Task Execution Role ARN |
-| iam_cwagent_task_role | Task Role ARN |
+| iam_cwagent_task_execution_role_arn | Task Execution Role ARN |
+| iam_cwagent_task_role_arn | Task Role ARN |
 
 <!-- terraform_docs_end -->
 

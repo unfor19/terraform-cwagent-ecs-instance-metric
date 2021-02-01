@@ -4,21 +4,21 @@ output "app_name" {
 }
 
 output "ecs_service_arn" {
-  value       = aws_ecs_service.cwagent.arn
+  value       = aws_ecs_service.cwagent.id
   description = "Service ARN"
 }
 
 output "ecs_task_definition_arn" {
-  value       = aws_ecs_task_definition.cwagent.ARN
+  value       = aws_ecs_task_definition.cwagent.arn
   description = "Task Definition ARN"
 }
 
-output "iam_cwagent_task_execution_role" {
-  value       = aws_iam_role.cwagent_task_execution_role.arn
+output "iam_cwagent_task_execution_role_arn" {
+  value       = local.task_execution_role_arn
   description = "Task Execution Role ARN"
 }
 
-output "iam_cwagent_task_role" {
-  value       = aws_iam_role.cwagent_task_role.arn
+output "iam_cwagent_task_role_arn" {
+  value       = local.task_role_arn
   description = "Task Role ARN"
 }

@@ -44,12 +44,14 @@ In a future release, it will be possible to set a [custom configuration for the 
 ```ruby
 module "cwagent" {
   source       = "unfor19/ecs-instance-metric/cwagent"
-  version      = "0.0.1"
+  version      = "0.0.2"
   region       = "eu-west-1"
   cluster_name = "my-ecs-cluster-name"
 
-  prefix       = "my-app" # optional
-  suffix       = "dev"    # optional
+  # optional
+  prefix       = "ecs"
+  app_name     = "cwagent"
+  suffix       = "dev"
 }
 ```
 

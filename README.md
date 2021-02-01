@@ -73,6 +73,7 @@ module "cwagent" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| app_name | Assigned to Resources Names | `string` | `"cwagent"` | no |
 | cluster_name | Target ECS Cluster from which you want to collect metrics | `string` | n/a | yes |
 | execution_role_arn | Target ECS Execution Role, if empty then the role is created as part of this module | `string` | `""` | no |
 | image_tag | CloudWatch Agent Image Tag for amazon/cloudwatch-agent:{image_tag} | `string` | `"1.247347.3b250378"` | no |
@@ -87,7 +88,7 @@ module "cwagent" {
 
 | Name | Description |
 |------|-------------|
-| app_name | Final name of the app, optionally includes prefix and suffix |
+| app_name | App name, optionally includes prefix and suffix |
 | ecs_service_arn | Service ARN |
 | ecs_task_definition_arn | Task Definition ARN |
 | iam_cwagent_task_execution_role | Task Execution Role ARN |

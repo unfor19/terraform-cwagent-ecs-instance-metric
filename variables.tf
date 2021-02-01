@@ -10,6 +10,13 @@ variable "cluster_name" {
 }
 
 
+variable "app_name" {
+  type        = string
+  description = "Assigned to Resources Names"
+  default     = "cwagent"
+}
+
+
 variable "prefix" {
   type        = string
   default     = ""
@@ -73,10 +80,11 @@ locals {
   cluster_name = var.cluster_name
   aws_region   = var.region
 
-  prefix        = var.prefix
-  suffix        = var.suffix
-  temp_app_name = local.prefix == "" ? "cwagent" : "${local.prefix}-cwagent"
-  app_name      = local.suffix == "" ? local.temp_app_name : "${local.temp_app_name}-${local.suffix}"
+  prefix         = var.prefix
+  suffix         = var.suffix
+  temp_app_name1 = var.app_name == "" ? "cwagent" : var.app_name
+  temp_app_name2 = local.prefix == "" ? local.temp_app_name1 : "${local.prefix}-${local.temp_app_name1}"
+  app_name       = local.suffix == "" ? local.temp_app_name2 : "${local.temp_app_name2}-${local.suffix}"
 
   cwagent_container_mountpoints = data.template_file.cwagent_container_mountpoints.rendered
   cwagent_image_tag             = var.image_tag

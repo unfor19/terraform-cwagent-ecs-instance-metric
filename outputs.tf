@@ -1,6 +1,6 @@
 output "app_name" {
   value       = local.app_name
-  description = "Final name of the app, optionally includes prefix and suffix"
+  description = "App name, optionally includes prefix and suffix"
 }
 
 output "ecs_service_arn" {

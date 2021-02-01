@@ -4,9 +4,39 @@ The terraform module for [deploying the CloudWatch Agent to Collect EC2 Instance
 
 **IMPORTANT**: Works only on Linux EC2 instances. If you have 2 Linux + 1 Windows, then the ECS Service desired count will be 3, but the running tasks will be 2, which is normal.
 
-## Usage
 
-- In a future release, it will be possible to set a [custom configuration for the CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html#:~:text=Advanced%20Configuration) with [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).
+## CloudWatch Agent Configuration
+
+In a future release, it will be possible to set a [custom configuration for the CloudWatch Agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-instancelevel.html#:~:text=Advanced%20Configuration) with [SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).
+
+<details>
+
+<summary>Default configuration file values - Expand/Collapse</summary>
+
+- region (AWS Region)
+- metrics_collection_interval (Seconds)
+- force_flush_interval (Seconds)
+- endpoint_override (Omitted)
+
+```json
+{
+    "agent": {
+        "region": "your-aws-region"
+    },
+    "logs": {
+        "metrics_collected": {
+            "ecs": {
+                "metrics_collection_interval": 60
+            }
+        },
+        "force_flush_interval": 5
+    }
+}
+```
+
+</details>
+
+## Usage
 
 ```ruby
 module "cwagent" {

@@ -43,8 +43,14 @@ In a future release, it will be possible to set a [custom configuration for the 
 
 ```ruby
 module "cwagent" {
-  source       = "unfor19/ecs-instance-metric/cwagent"
-  version      = "0.0.2"
+  # latest version
+  source = "git::https://bitbucket.org/uds-dev/ecs-cluster.git"
+
+  # specific version
+  # source       = "unfor19/ecs-instance-metric/cwagent"
+  # version      = "0.0.3"
+
+  # required
   region       = "eu-west-1"
   cluster_name = "my-ecs-cluster-name"
 
